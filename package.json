@@ -1,30 +1,29 @@
 {
-  "name": "execom",
+  "name": "flask-template",
   "version": "0.1.0",
-  "description": "Executiv committee database for archive",
-  "main": "manage.py",
+  "description": "Template for Flask projects",
+  "main": "src/manage.py",
   "scripts": {
     "preinstall": "git pull && pip install -r requirements.txt && flask db upgrade && bower install",
     "prestart": "gulp",
     "start": "python manage.py runserver",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "src/test.py"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garhivelg/execom.git"
+    "url": "git+https://github.com/d2emon/flask-template.git"
   },
   "keywords": [
-    "archive",
-    "database",
-    "documents"
+    "template",
+    "flask"
   ],
   "author": "Dmitry Kutsenko <d2emonium@gmail.com>",
   "license": "GPL-3.0",
   "private": "True",
   "bugs": {
-    "url": "https://github.com/garhivelg/execom/issues"
+    "url": "https://github.com/d2emon/flask-template/issues"
   },
-  "homepage": "https://github.com/garhivelg/execom#readme",
+  "homepage": "https://github.com/d2emon/flask-template#readme",
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -35,5 +34,5 @@
   },
   "dependencies": {
     "gulpfile": "git+https://github.com/d2emon/gulpfile.git"
-  }
+  }  
 }
