@@ -9,9 +9,12 @@ from setuptools import find_packages
 from cx_Freeze import setup, Executable
 from codecs import open
 from os import path
+import sys
 
 
 here = path.abspath(path.dirname(__file__))
+parent_dir = path.abspath(path.join(here, 'src'))
+sys.path.append(parent_dir)
 
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -86,7 +89,12 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
 
-    packages=find_packages(exclude=['tests']),
+    package_dir={'': 'src'},
+    packages=find_packages('./src', exclude=['tests']),
+    py_modules=[
+        "app",
+        "config",
+    ],
     install_requires=requirements,
 
     entry_points={
