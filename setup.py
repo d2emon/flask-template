@@ -34,7 +34,7 @@ build_exe_options = {
         "static",
         "templates",
         "db",
-        "docx",
+        # "docx",
         "log",
         "upload",
     ],
@@ -45,15 +45,18 @@ build_exe_options = {
 
 base = None
 setup(
-    name='ExeCom',
+    name='flask-template',
     version=version,
-    keywords='(&#39;archive database flask privatisation&#39;,)',
-    description='Executive committee database for archive',
+    keywords=[
+        "template",
+        "flask"
+    ],
+    description='Template for Flask projects',
     long_description=long_description,
-    url='https://github.com/garhivelg/execom',
+    url='https://github.com/d2emon/flask-template#readme',
     executables = [Executable("manage.py", base=base, icon=r"assets/favicon/favicon.ico")],
 
-    author=' ',
+    author='Dmitry Kutsenko',
     author_email='d2emonium@gmail.com',
 
     license='GPL-3.0',
@@ -71,7 +74,7 @@ setup(
         'Topic :: Software Development :: Build Tools',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GPL-3.0',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
