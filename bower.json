@@ -1,17 +1,16 @@
 {
-  "name": "execom",
-  "description": "Executiv committee database for archive",
-  "main": "manage.py",
+  "name": "flask-template",
+  "description": "Template for Flask projects",
+  "main": "src/manage.py",
   "authors": [
     "Dmitry Kutsenko <d2emonium@gmail.com>"
   ],
   "license": "GPL-3.0",
   "keywords": [
-    "archive",
-    "database",
-    "documents"
+    "template",
+    "flask"
   ],
-  "homepage": "https://github.com/garhivelg/execom",
+  "homepage": "https://github.com/d2emon/flask-template",
   "private": true,
   "ignore": [
     "**/.*",
@@ -27,5 +26,5 @@
     "dropzone": "^5.0.1",
     "components-font-awesome": "^4.7.0",
     "crud-assets": "git+https://github.com/d2emon/crud-assets.git"
-  }
+  }  
 }
