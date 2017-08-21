@@ -4,9 +4,10 @@
   "description": "Template for Flask projects",
   "main": "src/manage.py",
   "scripts": {
-    "preinstall": "git pull && pip install -r requirements.txt && flask db upgrade && bower install",
+    "preinstall": "git pull",
+    "install": "node scripts/install.js",
     "prestart": "gulp",
-    "start": "python manage.py runserver",
+    "start": "python src/manage.py runserver",
     "test": "src/test.py"
   },
   "repository": {
@@ -34,5 +35,6 @@
   },
   "dependencies": {
     "gulpfile": "git+https://github.com/d2emon/gulpfile.git"
+    "shelljs": "^0.7.8"
   }  
 }
