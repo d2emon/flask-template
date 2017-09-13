@@ -1,15 +1,9 @@
 # import sys
 import os
-from datetime import timedelta
 import locale
 
 
-# BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.abspath(os.getcwd())
-# if getattr(sys, 'frozen', False):
-#     BASE_DIR = os.path.dirname(sys.executable)
-# else:
-#     BASE_DIR = os.path.dirname(__file__)
 
 try:
     locale.setlocale(locale.LC_ALL, 'russian')
@@ -20,10 +14,6 @@ except locale.Error:
 class Config(object):
     DEBUG = False
     TESTING = False
-    SECRET_KEY = "ThereIsNoSpoon"
-
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///db/execom.db'
 
     LOG = {
         "FILENAME": os.path.join(BASE_DIR, "log", "execom.log"),
@@ -32,20 +22,20 @@ class Config(object):
         "FORMAT": "%(asctime)s[%(levelname)s]:\t%(message)s\tin %(module)s at %(lineno)d",
     }
 
-    BACKUP_TIME = timedelta(minutes=30)
-    DB_PATH = os.path.join(BASE_DIR, "db")
-    BACKUP_PATH = os.path.join(BASE_DIR, "db", "backup")
-    DB_FILENAME = "execom.db"
-    BACKUP_FILENAME = "execom-%s.db"
-    # SQLALCHEMY_DATABASE_URI = "sqlite:////%s/%s" % (DB_PATH, DB_FILENAME)
-    # SQLALCHEMY_DATABASE_URI = "sqlite:///../db/%s" % (DB_FILENAME)
-    SQLALCHEMY_DATABASE_URI = "sqlite:///db/%s" % (DB_FILENAME)
-
     VIEW_CASE = "edit_case"
 
     UPLOAD_PATH = os.path.join(BASE_DIR, "upload")
+    # UPLOAD_FOLDER = './static/upload/'
+    # ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # configuration page num
     RECORDS_ON_PAGE = 50
+    # PER_PAGE = 10
+
+    STATIC_FOLDER = os.path.join(BASE_DIR, 'static')
+    TEMPLATE_FOLDER = os.path.join(BASE_DIR, 'templates')
 
 
 class ProductionConfig(Config):
